@@ -28,11 +28,11 @@ const Woofles: React.FC<WooflesProps> = ({
           whileTap={{ scale: 0.95 }}
         >
           <img 
-            src="./images/woofles.jpg" 
+            src="./images/woofles.png" 
             alt="Woofles" 
             style={{ 
-              width: '200px', 
-              height: '200px',
+              width: '300px', 
+              height: '300px',
               objectFit: 'contain',
               maxWidth: 'none',
               filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 
@@ -90,11 +90,11 @@ const Woofles: React.FC<WooflesProps> = ({
         whileTap={{ scale: 0.95 }}
       >
         <img 
-          src="./images/woofles.jpg" 
+          src="./images/woofles.png" 
           alt="Woofles" 
           style={{ 
-            width: '150px', 
-            height: '150px',
+            width: '225px', 
+            height: '225px',
             objectFit: 'contain',
             maxWidth: 'none',
             filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 

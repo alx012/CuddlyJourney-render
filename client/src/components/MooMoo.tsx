@@ -28,12 +28,12 @@ const MooMoo: React.FC<MooMooProps> = ({
           whileTap={{ scale: 0.95 }}
         >
           <img 
-            src="./images/moo-moo.jpg" 
+            src="./images/moo-moo.png" 
             alt="Moo-Moo" 
             className="w-full h-full object-contain"
             style={{ 
-              width: '200px', 
-              height: '200px',
+              width: '300px', 
+              height: '300px',
               objectFit: 'contain',
               maxWidth: 'none',
               filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 
@@ -91,11 +91,11 @@ const MooMoo: React.FC<MooMooProps> = ({
         whileTap={{ scale: 0.95 }}
       >
         <img 
-          src="./images/moo-moo.jpg" 
+          src="./images/moo-moo.png" 
           alt="Moo-Moo" 
           style={{ 
-            width: '150px', 
-            height: '150px',
+            width: '225px', 
+            height: '225px',
             objectFit: 'contain',
             maxWidth: 'none',
             filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 
