@@ -28,7 +28,7 @@ const MooMoo: React.FC<MooMooProps> = ({
           whileTap={{ scale: 0.95 }}
         >
           <img 
-            src="/images/moo-moo.jpg" 
+            src="./images/moo-moo.jpg" 
             alt="Moo-Moo" 
             className="w-full h-full object-contain"
           />
@@ -84,7 +84,7 @@ const MooMoo: React.FC<MooMooProps> = ({
         whileTap={{ scale: 0.95 }}
       >
         <img 
-          src="/images/moo-moo.jpg" 
+          src="./images/moo-moo.jpg" 
           alt="Moo-Moo" 
           className="w-full h-full object-contain"
         />

@@ -28,7 +28,7 @@ const Woofles: React.FC<WooflesProps> = ({
           whileTap={{ scale: 0.95 }}
         >
           <img 
-            src="/images/woofles.jpg" 
+            src="./images/woofles.jpg" 
             alt="Woofles" 
             className="w-full h-full object-contain"
           />
@@ -84,7 +84,7 @@ const Woofles: React.FC<WooflesProps> = ({
         whileTap={{ scale: 0.95 }}
       >
         <img 
-          src="/images/woofles.jpg" 
+          src="./images/woofles.jpg" 
           alt="Woofles" 
           className="w-full h-full object-contain"
         />

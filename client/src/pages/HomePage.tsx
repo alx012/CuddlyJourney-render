@@ -50,7 +50,7 @@ const HomePage: React.FC = () => {
       <div 
         className="w-full h-screen bg-cover bg-center relative"
         style={{ 
-          backgroundImage: "url('/images/home-background.jpg')", 
+          backgroundImage: "url('./images/home-background.jpg')", 
           backgroundPosition: "center" 
         }}
       >
