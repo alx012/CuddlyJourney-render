@@ -31,6 +31,13 @@ const MooMoo: React.FC<MooMooProps> = ({
             src="./images/moo-moo.jpg" 
             alt="Moo-Moo" 
             className="w-full h-full object-contain"
+            style={{ 
+              width: '200px', 
+              height: '200px',
+              objectFit: 'contain',
+              maxWidth: 'none',
+              filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 
+            }}
           />
           {showSpeech && (
             <motion.div 
@@ -86,7 +93,13 @@ const MooMoo: React.FC<MooMooProps> = ({
         <img 
           src="./images/moo-moo.jpg" 
           alt="Moo-Moo" 
-          className="w-full h-full object-contain"
+          style={{ 
+            width: '150px', 
+            height: '150px',
+            objectFit: 'contain',
+            maxWidth: 'none',
+            filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 
+          }}
         />
       </motion.div>
     );

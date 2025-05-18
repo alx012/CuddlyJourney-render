@@ -30,7 +30,13 @@ const Woofles: React.FC<WooflesProps> = ({
           <img 
             src="./images/woofles.jpg" 
             alt="Woofles" 
-            className="w-full h-full object-contain"
+            style={{ 
+              width: '200px', 
+              height: '200px',
+              objectFit: 'contain',
+              maxWidth: 'none',
+              filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 
+            }}
           />
           {showSpeech && (
             <motion.div 
@@ -86,7 +92,13 @@ const Woofles: React.FC<WooflesProps> = ({
         <img 
           src="./images/woofles.jpg" 
           alt="Woofles" 
-          className="w-full h-full object-contain"
+          style={{ 
+            width: '150px', 
+            height: '150px',
+            objectFit: 'contain',
+            maxWidth: 'none',
+            filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 
+          }}
         />
       </motion.div>
     );
