@@ -40,7 +40,7 @@ const Woofles: React.FC<WooflesProps> = ({
           />
           {showSpeech && (
             <motion.div 
-              className="bg-white rounded-xl p-3 shadow-lg absolute -top-16 w-32 text-center font-indie z-10"
+              className="bg-white rounded-xl p-3 shadow-lg absolute -top-36 w-40 text-center font-indie z-10"
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0 }}

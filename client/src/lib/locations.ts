@@ -16,47 +16,49 @@ export interface Location {
 export const locations: Location[] = [
   { 
     id: 0, 
-    name: "Sunny Park", 
-    type: "landmark",
-    background: "https://images.unsplash.com/photo-1510797215324-95aa89f43c33?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080", 
-    icon: "📍"
+    name: "海底撈餐廳 (Haidilao)", 
+    type: "restaurant",
+    background: "./images/locations/haidilao.jpg", 
+    icon: "🍲"
   },
   { 
     id: 1, 
-    name: "Ghibli Cafe", 
+    name: "Panni 餐廳", 
     type: "restaurant", 
-    background: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080", 
+    background: "./images/locations/panni.jpg", 
     icon: "🍽️"
   },
   { 
     id: 2, 
-    name: "Enchanted Forest", 
+    name: "旗津海邊 (Qijin Seaside)", 
     type: "landmark", 
-    background: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080", 
-    icon: "📍"
+    background: "./images/locations/qijin.jpg", 
+    icon: "🏖️"
   },
   { 
     id: 3, 
-    name: "Seaside Restaurant", 
+    name: "台南酒吧 (Tainan Bar)", 
     type: "restaurant", 
-    background: "https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080", 
-    icon: "🍽️"
-  },
-  { 
-    id: 4, 
-    name: "Starry Wishing Fountain", 
-    type: "fountain", 
-    background: "https://images.unsplash.com/photo-1542652694-40abf526446e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&h=1080", 
-    icon: "✨"
+    background: "./images/locations/tainan.jpg", 
+    icon: "🍸"
   }
 ];
 
-// Fountain dialog sequences
+// Location specific dialog sequences
 export const fountainDialogs = [
-  "Moo-Moo: This journey with you has been amazing, Woofles!",
-  "Woofles: Every step was an adventure because we were together!",
-  "Moo-Moo: Remember when we first met? I was so nervous!",
-  "Woofles: And now look at us, traveling the world together!",
-  "Moo-Moo: I wish we could stay like this forever...",
-  "Woofles: With you, Moo-Moo, I know we will!"
+  // Haidilao dialogs
+  "Moo-Moo: 這是我們第一次見面的地方！",
+  "Woofles: 沒錯，在海底撈！我們常常一起來這裡吃飯。",
+  
+  // Panni dialogs
+  "Moo-Moo: 這是寶寶最愛的餐廳！",
+  "Woofles: 沒錯，這裡的食物真的很好吃！",
+  
+  // Qijin seaside dialogs
+  "Moo-Moo: 記得我們一起看的那次落日嗎？",
+  "Woofles: 在海邊吹著微風，然後晚上騎電動滑板車在駁二港口！",
+  
+  // Tainan bar dialogs
+  "Moo-Moo: 我們的第一次旅行！",
+  "Woofles: 在台南喝了好多好喝的酒，真的很開心！"
 ];
