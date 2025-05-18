@@ -120,8 +120,8 @@ const AdventurePage: React.FC = () => {
         >
           <div className="absolute inset-0 bg-[#A5C8E1] bg-opacity-20"></div>
           
-          {/* Walking characters */}
-          <div className="absolute bottom-24 left-0">
+          {/* Walking characters - positioned higher */}
+          <div className="absolute bottom-64 left-0">
             <MooMoo 
               mode={characterMode} 
               onClick={handleCharacterClick}
@@ -129,7 +129,7 @@ const AdventurePage: React.FC = () => {
             />
           </div>
           
-          <div className="absolute bottom-24 left-8">
+          <div className="absolute bottom-64 left-8">
             <Woofles 
               mode={characterMode} 
               onClick={handleCharacterClick}
