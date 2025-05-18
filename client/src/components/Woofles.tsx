@@ -3,16 +3,18 @@ import React from "react";
 
 interface WooflesProps {
   mode: "home" | "walking" | "center";
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
   showSpeech?: boolean;
   speechText?: string;
+  direction?: "left-to-center" | "center-to-right";
 }
 
 const Woofles: React.FC<WooflesProps> = ({ 
   mode, 
   onClick, 
   showSpeech = false,
-  speechText = "Woof! I'm ready!"
+  speechText = "Woof! I'm ready!",
+  direction = "left-to-center"
 }) => {
   if (mode === "home") {
     return (
@@ -56,12 +58,30 @@ const Woofles: React.FC<WooflesProps> = ({
   }
   
   if (mode === "walking" || mode === "center") {
+    // Get position values for animation
+    let initialX: string | number;
+    let targetX: string | number;
+    
+    if (mode === "walking") {
+      if (direction === "left-to-center") {
+        initialX = "-100%";
+        targetX = "calc(50vw - 20px)";
+      } else {
+        initialX = "calc(50vw - 20px)";
+        targetX = "100%";
+      }
+    } else {
+      initialX = "calc(50vw - 20px)";
+      targetX = "calc(50vw - 20px)";
+    }
+    
     return (
       <motion.div
         onClick={onClick}
         className="w-24 h-24 cursor-pointer"
-        initial={mode === "walking" ? { x: "-100%" } : { x: 0 }}
-        animate={mode === "walking" ? { x: "calc(50vw - 20px)" } : { x: 0 }}
+        style={{ position: "absolute" }}
+        initial={{ x: initialX }}
+        animate={{ x: targetX }}
         transition={{ duration: 5, ease: "easeInOut" }}
         whileTap={{ scale: 0.95 }}
       >

@@ -6,7 +6,13 @@ export interface Location {
   icon: string;
 }
 
-// Define location data
+/**
+ * Define location data
+ * To replace the background images:
+ * 1. Upload your own images to a hosting service (like Imgur, Cloudinary, etc.)
+ * 2. Replace the URL in the background property
+ * 3. Make sure the image is publicly accessible
+ */
 export const locations: Location[] = [
   { 
     id: 0, 

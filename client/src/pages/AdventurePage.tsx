@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import MooMoo from "@/components/MooMoo";
 import Woofles from "@/components/Woofles";
-import Cloud from "@/components/Cloud";
 import HeartEffect from "@/components/HeartEffect";
 import StickyNote from "@/components/StickyNote";
 import FountainDialog from "@/components/FountainDialog";
@@ -14,6 +13,7 @@ const AdventurePage: React.FC = () => {
   const [, setLocation] = useLocation();
   const [currentLocationIndex, setCurrentLocationIndex] = useState(0);
   const [characterMode, setCharacterMode] = useState<"walking" | "center">("walking");
+  const [characterDirection, setCharacterDirection] = useState<"left-to-center" | "center-to-right">("left-to-center");
   const [isSticky, setIsSticky] = useState(false);
   const [heartEffect, setHeartEffect] = useState<{ active: boolean, x: number, y: number }>({ 
     active: false, 
@@ -39,19 +39,8 @@ const AdventurePage: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Reset character positions when changing location
-  useEffect(() => {
-    setCharacterMode("walking");
-    
-    const timer = setTimeout(() => {
-      setCharacterMode("center");
-    }, 5000); // Match animation duration
-    
-    return () => clearTimeout(timer);
-  }, [currentLocationIndex]);
-  
   // Handle character click (hearts or fountain dialog)
-  const handleCharacterClick = (e: React.MouseEvent) => {
+  const handleCharacterClick = (e: React.MouseEvent): void => {
     // Create heart effect
     setHeartEffect({ 
       active: true, 
@@ -78,13 +67,39 @@ const AdventurePage: React.FC = () => {
   // Handle navigation
   const goToPrevLocation = () => {
     if (!isFirstLocation) {
-      setCurrentLocationIndex(prev => prev - 1);
+      // First move characters off-screen right-to-left (reversed)
+      setCharacterDirection("center-to-right");
+      setCharacterMode("walking");
+      
+      // Then change location after animation
+      setTimeout(() => {
+        setCurrentLocationIndex(prev => prev - 1);
+        setCharacterDirection("left-to-center");
+        
+        // Reset character to walking from left after location change
+        setTimeout(() => {
+          setCharacterMode("center");
+        }, 5000); // Match animation duration
+      }, 1000);
     }
   };
   
   const goToNextLocation = () => {
     if (!isLastLocation) {
-      setCurrentLocationIndex(prev => prev + 1);
+      // First move characters off-screen left-to-right
+      setCharacterDirection("center-to-right");
+      setCharacterMode("walking");
+      
+      // Then change location after animation
+      setTimeout(() => {
+        setCurrentLocationIndex(prev => prev + 1);
+        setCharacterDirection("left-to-center");
+        
+        // Reset character to walking from left after location change
+        setTimeout(() => {
+          setCharacterMode("center");
+        }, 5000); // Match animation duration
+      }, 1000);
     }
   };
   
@@ -105,17 +120,21 @@ const AdventurePage: React.FC = () => {
         >
           <div className="absolute inset-0 bg-[#A5C8E1] bg-opacity-20"></div>
           
-          {/* Clouds */}
-          <Cloud top="12px" duration={50} size="large" />
-          <Cloud top="24px" delay={10} duration={80} size="small" />
-          
           {/* Walking characters */}
           <div className="absolute bottom-24 left-0">
-            <MooMoo mode={characterMode} onClick={handleCharacterClick} />
+            <MooMoo 
+              mode={characterMode} 
+              onClick={handleCharacterClick}
+              direction={characterDirection}
+            />
           </div>
           
           <div className="absolute bottom-24 left-8">
-            <Woofles mode={characterMode} onClick={handleCharacterClick} />
+            <Woofles 
+              mode={characterMode} 
+              onClick={handleCharacterClick}
+              direction={characterDirection}
+            />
           </div>
           
           {/* Heart effects */}
