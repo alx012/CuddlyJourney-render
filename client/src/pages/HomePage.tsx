@@ -57,7 +57,7 @@ const HomePage: React.FC = () => {
         <div className="absolute inset-0 bg-black bg-opacity-20"></div>
         
         <div className="absolute top-6 left-0 w-full text-center">
-          <h1 className="font-indie text-5xl md:text-6xl text-white drop-shadow-lg">Moo-Moo & Woofles</h1>
+          <h1 className="font-indie text-5xl md:text-6xl text-white drop-shadow-lg">牛牛 & 狗狗</h1>
           <p className="font-comic text-lg md:text-xl text-white drop-shadow-md mt-2">A Magical Adventure</p>
         </div>
         

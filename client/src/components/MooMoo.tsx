@@ -13,7 +13,7 @@ const MooMoo: React.FC<MooMooProps> = ({
   mode, 
   onClick, 
   showSpeech = false,
-  speechText = "Moo! Let's explore!",
+  speechText = "我是牛牛! 一起探險吧!",
   direction = "left-to-center"
 }) => {
   if (mode === "home") {
@@ -32,8 +32,8 @@ const MooMoo: React.FC<MooMooProps> = ({
             alt="Moo-Moo" 
             className="w-full h-full object-contain"
             style={{ 
-              width: '300px', 
-              height: '300px',
+              width: '240px', 
+              height: '240px',
               objectFit: 'contain',
               maxWidth: 'none',
               filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 
@@ -94,8 +94,8 @@ const MooMoo: React.FC<MooMooProps> = ({
           src="./images/moo-moo.png" 
           alt="Moo-Moo" 
           style={{ 
-            width: '225px', 
-            height: '225px',
+            width: '180px', 
+            height: '180px',
             objectFit: 'contain',
             maxWidth: 'none',
             filter: 'drop-shadow(0px 0px 5px rgba(0,0,0,0.2))' 

@@ -41,6 +41,20 @@ export const locations: Location[] = [
     type: "restaurant", 
     background: "./images/locations/tainan.jpg", 
     icon: "🍸"
+  },
+  { 
+    id: 4, 
+    name: "我們的家 (Our Home)", 
+    type: "landmark", 
+    background: "./images/locations/home.jpg", 
+    icon: "🏠"
+  },
+  { 
+    id: 5, 
+    name: "520 慶祝日 (Special Day)", 
+    type: "landmark", 
+    background: "./images/locations/520.jpg", 
+    icon: "❤️"
   }
 ];
 

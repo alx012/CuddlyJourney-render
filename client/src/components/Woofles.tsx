@@ -13,7 +13,7 @@ const Woofles: React.FC<WooflesProps> = ({
   mode, 
   onClick, 
   showSpeech = false,
-  speechText = "Woof! I'm ready!",
+  speechText = "我是狗狗! 準備好冒險了!",
   direction = "left-to-center"
 }) => {
   if (mode === "home") {
