@@ -23,17 +23,15 @@ const Woofles: React.FC<WooflesProps> = ({
         className="character cursor-pointer transition-transform hover:animate-bounce-slow"
       >
         <motion.div 
-          className="relative w-40 h-40 bg-[#F9D5BB] rounded-full flex items-center justify-center"
+          className="relative w-40 h-40 flex items-center justify-center"
           whileHover={{ y: -5 }}
           whileTap={{ scale: 0.95 }}
         >
-          <div className="absolute w-36 h-36 rounded-full bg-[#F9D5BB] border-4 border-[#8B6E4E] flex items-center justify-center overflow-hidden">
-            <div className="bg-[#8B6E4E] w-8 h-12 rounded-full absolute -top-1 left-5 transform rotate-45"></div>
-            <div className="bg-[#8B6E4E] w-8 h-12 rounded-full absolute -top-1 right-5 transform -rotate-45"></div>
-            <div className="bg-black w-3 h-3 rounded-full absolute top-16 left-10"></div>
-            <div className="bg-black w-3 h-3 rounded-full absolute top-16 right-10"></div>
-            <div className="bg-black w-6 h-4 rounded-full absolute top-24"></div>
-          </div>
+          <img 
+            src="/images/woofles.jpg" 
+            alt="Woofles" 
+            className="w-full h-full object-contain"
+          />
           {showSpeech && (
             <motion.div 
               className="bg-white rounded-xl p-3 shadow-lg absolute -top-16 w-32 text-center font-indie z-10"
@@ -78,20 +76,18 @@ const Woofles: React.FC<WooflesProps> = ({
     return (
       <motion.div
         onClick={onClick}
-        className="w-24 h-24 cursor-pointer"
+        className="w-32 h-32 cursor-pointer"
         style={{ position: "absolute" }}
         initial={{ x: initialX }}
         animate={{ x: targetX }}
         transition={{ duration: 5, ease: "easeInOut" }}
         whileTap={{ scale: 0.95 }}
       >
-        <div className="w-24 h-24 bg-[#F9D5BB] rounded-full flex items-center justify-center border-2 border-[#8B6E4E]">
-          <div className="bg-[#8B6E4E] w-6 h-10 rounded-full absolute -top-2 left-4 transform rotate-45"></div>
-          <div className="bg-[#8B6E4E] w-6 h-10 rounded-full absolute -top-2 right-4 transform -rotate-45"></div>
-          <div className="bg-black w-2 h-2 rounded-full absolute top-12 left-8"></div>
-          <div className="bg-black w-2 h-2 rounded-full absolute top-12 right-8"></div>
-          <div className="bg-black w-4 h-2 rounded-full absolute top-16"></div>
-        </div>
+        <img 
+          src="/images/woofles.jpg" 
+          alt="Woofles" 
+          className="w-full h-full object-contain"
+        />
       </motion.div>
     );
   }
