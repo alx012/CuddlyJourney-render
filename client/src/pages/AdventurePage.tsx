@@ -39,7 +39,7 @@ const AdventurePage: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
   
-  // Handle character click (hearts or fountain dialog)
+  // Handle character click (hearts or location dialog)
   const handleCharacterClick = (e: React.MouseEvent): void => {
     // Create heart effect
     setHeartEffect({ 
@@ -48,15 +48,17 @@ const AdventurePage: React.FC = () => {
       y: e.clientY 
     });
     
-    // Show fountain dialog if at final location
-    if (isFountain) {
-      setShowDialog(true);
-      setDialogIndex(prev => (prev + 1) % fountainDialogs.length);
-      
-      setTimeout(() => {
-        setShowDialog(false);
-      }, 4000);
-    }
+    // Show location-specific dialog
+    const locationId = currentLocation.id;
+    let dialogStart = locationId * 2; // Each location has 2 dialog lines
+    
+    // Alternate between Moo-Moo and Woofles dialog
+    setDialogIndex(dialogStart + (dialogIndex % 2 === 0 ? 0 : 1));
+    setShowDialog(true);
+    
+    setTimeout(() => {
+      setShowDialog(false);
+    }, 4000);
     
     // Reset heart effect
     setTimeout(() => {
